@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEditor;
 
 [CanEditMultipleObjects]
-[CustomEditor(typeof(PickUpAndHold))]
+[CustomEditor(typeof(GrayPickUpAndHold))]
 public class PickUpAndHoldInspector : InspectorBase
 {
 	private string explanation = "The Player can pick up and drop objects by pressing a key.";

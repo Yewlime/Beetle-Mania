@@ -1,11 +1,12 @@
 using UnityEngine;
 
-[AddComponentMenu("Playground/Gameplay/Pick Up And Hold")]
-public class GreyPickUpAndHold : MonoBehaviour
+
+public class GrayPickUpAndHold : MonoBehaviour
 {
     //pickup key and drop key could be the same
     public KeyCode pickupKey = KeyCode.B;
     public KeyCode dropKey = KeyCode.B;
+    public KeyCode mashKey = KeyCode.B;
 
     public float pickUpDistance = 2f; // An object need to closer than that distance to be picked up.
                                       //public float hitToDropObject = Mathf.Infinity; //if the character hits anything with a force stronger than this value, the pickup is dropped
@@ -32,6 +33,16 @@ public class GreyPickUpAndHold : MonoBehaviour
             GrayDrop();
             //Debug.Log("Drop");
         }
+
+        if (Input.GetKeyDown(mashKey)
+            && carriedObject != null
+            && !justPickedUpSomething)
+        {
+            //We're holding something already, we drop
+            GrayDrop();
+            //Debug.Log("Drop");
+        }
+
     }
 
     public void GrayDrop()
